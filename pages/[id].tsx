@@ -4,9 +4,11 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const IdPage: NextPage = () => {
   const router = useRouter();
-  console.log('HomePage router.isReady:', router.isReady);
+  // When user move to IdPage from HomePage, I expected router.isReady initial value will be false
+  // However, it stays true only in safari browser (chrome is okay with it)
+  console.log('idPage router.isRready:', router.isReady);
 
   return (
     <div className={styles.container}>
@@ -73,4 +75,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default IdPage;
